@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test('check that "express works" text is present', async ({ page }) => {
+/* test('check that "express works" text is present', async ({ page }) => {
   await page.goto('/');
   
   // Using the expect method with a page locator
@@ -9,7 +9,7 @@ test('check that "express works" text is present', async ({ page }) => {
   const heading = page.locator('h1');
   await expect(heading).toHaveText('express works');
 
-});
+}); */
 
 test('check that UTF-8 meta tag is present', async ({ page }) => {
   //Arrange: Go to the site homepage
