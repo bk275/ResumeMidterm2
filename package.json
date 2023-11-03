@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/kaw393939/webdev1project#readme",
   "devDependencies": {
-    "@playwright/test": "^1.38.1",
+    "@playwright/test": "^1.39.0",
     "@types/node": "^20.7.2"
   },
   "dependencies": {
