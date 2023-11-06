@@ -8,44 +8,54 @@ body {
     --orange-color: #e74c3c;
 }
 .menu-bar {
-    width: 53.125rem;
-    height: 3.125rem;
-    background-color: rgba(155, 89, 182, 0.35);
-    box-shadow: 0 0 0.625rem var(--orange-color);
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row wrap;
-    margin: auto;
-}
-.menu-bar > button {
-    width: 9.375rem;
-    height: 2.188rem;
-    background-color: rgba(231, 76, 60, 0.4);
-    margin: 0.469rem;
-    border: none;
-    color: #000000;
-    font-size: 1.25rem;
-    font-family: 'Fredericka the Great', cursive;
-    flex-flow: row wrap;
-}
-.card {
-    box-shadow: 0 0.3rem 0.5rem 0 rgba(231, 76, 60, 0.4);
-    border-radius: 0.3rem;
-    margin-top: 5px;
-    max-width: 13.438rem;
-    max-height: 13.438rem;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
-.container {
-    padding: 0.13rem 1rem;
-}
-.card > img {
-    width: auto;
-    height: auto;
-    border-radius: 50%;
-}
-.card-text {
-    padding: 16px;
+.menu-bar a {
+    background-color: white;
+    color: black ;
     text-align: center;
-    background-color: #fff;
+    padding: 30px 40px;
+    text-decoration: none;
+    font-size: 32px;
+	border: 4px solid var(--purple-color);
+	border-radius : 15%;
+    box-shadow: 2px 4px 4px var(--orange-color);
+}
+.topnav a:hover {
+    background-color: var(--purple-color);
+    color: white;
+}
+.profile-box {
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    gap: 10px;
+    background-color: transparent;
+    padding: 10px;
+}
+.profile-box > div {
+    background-color: transparent;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+.quote {
+    grid-column: 1 / span 3;
+}
+.profile-box > div > img {
+    height: 300px;
+    border-radius: 80%;
+    box-shadow: 2px 2px 2px var(--orange-color);
+}
+.profile-box > div > p {
+    border: 3px solid;
+    border-image: linear-gradient(35deg, var(--purple-color), var(--orange-color)) 1;
+    box-shadow: 2px 2px 2px var(--orange-color);
+}
+footer {
+    font-family: 'Helvetica', sans-serif;
+}
+.footer p {
+    font-size: 12px;
 }
