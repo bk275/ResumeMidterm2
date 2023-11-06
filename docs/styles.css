@@ -60,6 +60,13 @@ body {
 	width: 250px;
 	height: 350px;
 }
+.flip-card3 {
+	width: 25%;
+	padding: 40px;
+	background-color: transparent;
+	width: 250px;
+	height: 350px;
+}
 .flip-card-back > ul {
 	padding: 3rem 1.5rem;
 	text-align: center;
