@@ -53,7 +53,7 @@ body {
     border-image: linear-gradient(35deg, var(--purple-color), var(--orange-color)) 1;
     box-shadow: 2px 2px 2px var(--orange-color);
 }
-.flip-card {
+.flip-card, .flip-card2 {
 	width: 25%;
 	padding: 20px;
 	background-color: transparent;
@@ -76,6 +76,9 @@ body {
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
+.flip-card2:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -90,7 +93,7 @@ body {
     text-align: center; 
     line-height: 16.5rem; 
     border: 5px solid;
-    border-image: linear-gradient(45deg, var(--purple-color), pink) 1;
+    border-image: linear-gradient(45deg, var(--purple-color), var(--orange-color)) 1;
     font-size: 20px;
 }  
 .flip-card-back {
