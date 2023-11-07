@@ -50,3 +50,11 @@ test('Check for exactly one <header> tag', async ({ page }) => {
   const headerTag = headerElements[0];
   expect(headerTag).toBeTruthy();
 });
+test('Check for exactly one <footer> tag', async ({ page }) => {
+  await page.goto(BenWebsite);
+  await page.waitForLoadState('load');
+  const footerElements = await page.$$('footer');
+  expect(footerElements.length).toBe(1);
+  const footerTag = footerElements[0];
+  expect(footerTag).toBeTruthy();
+});
