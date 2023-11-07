@@ -95,9 +95,17 @@ test('Check if <div> with class "profile-pic" has an image', async ({ page }) =>
   const profilePicElement = await page.$('div.profile-pic img');
   expect(profilePicElement).toBeTruthy();
 });
-/* test('Check if <i> with class "devicon-html5-plain colored" has an <img>', async ({ page }) => {
+test('Check if <i> with class "devicon-html5-plain colored" has an <img>', async ({ page }) => {
   await page.goto(BenWebsite); 
   await page.waitForLoadState('load');
   const htmlIconElement = await page.$('i.devicon-html5-plain.colored img');
   expect(htmlIconElement).toBeTruthy();
+});
+/* test('Check if <footer> with class "fa fa-github" has an <img> with src', async ({ page }) => {
+  await page.goto(BenWebsite);
+  await page.waitForLoadState('load');
+  const githubFooterElement = await page.$('footer.fa.fa-github img');
+  expect(githubFooterElement).toBeTruthy();
+  const imgSrc = await githubFooterElement.getAttribute('src');
+  expect(imgSrc).toBeTruthy();
 }); */
