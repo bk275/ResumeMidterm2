@@ -37,8 +37,16 @@ test('Check if HTML is connected to styles.css', async ({ page }) => {
   });
   expect(isStylesheetLinked).toBeTruthy();
 });
-test('Check if <body> tag is present', async ({ page }) => {
+test('Check if a <body> tag is present', async ({ page }) => {
   await page.goto(BenWebsite);
   const bodyTag = await page.$('body');
   expect(bodyTag).toBeTruthy();
+});
+test('Check for exactly one <header> tag', async ({ page }) => {
+  await page.goto(BenWebsite);
+  await page.waitForLoadState('load');
+  const headerElements = await page.$$('header');
+  expect(headerElements.length).toBe(1);
+  const headerTag = headerElements[0];
+  expect(headerTag).toBeTruthy();
 });
