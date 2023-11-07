@@ -29,3 +29,11 @@ test('check if resume title is visible', async ({ page }) => {
   const resumeButton = await page.$('.resume-button');
   expect(resumeButton).toBeTruthy();
 });
+test('Check if HTML is connected to styles.css', async ({ page }) => {
+  await page.goto(BenWebsite);
+  const isStylesheetLinked = await page.evaluate(() => {
+    const stylesheets = Array.from(document.styleSheets);
+    return stylesheets.some(sheet => sheet.href && sheet.href.includes('styles.css'));
+  });
+  expect(isStylesheetLinked).toBeTruthy();
+});
