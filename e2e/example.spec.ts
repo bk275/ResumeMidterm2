@@ -42,3 +42,8 @@ test('Check if <body> tag is present', async ({ page }) => {
   const bodyTag = await page.$('body');
   expect(bodyTag).toBeTruthy();
 });
+test('page should have a main element', async ({ page }) => {
+  await page.goto(BenWebsite);
+  const mainTag = await page.$('main');
+  expect(mainTag).toBeTruthy();
+});
