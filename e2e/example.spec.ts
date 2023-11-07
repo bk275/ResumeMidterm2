@@ -76,9 +76,16 @@ test('Check for <div> with class "menu-bar"', async ({ page }) => {
   expect(menuBarElement).toBeTruthy();
 });
 test('Check if meta tag with name "author" has a specific value', async ({ page }) => {
-  await page.goto('file:///path/to/your/file.html');
+  await page.goto(BenWebsite);
   await page.waitForLoadState('load');
   const expectedAuthor = 'Ben Kustanovich';
   const authorContent = await page.$eval('head meta[name="author"]', (metaTag) => metaTag.getAttribute('content'));
   expect(authorContent).toBe(expectedAuthor);
+});
+test('Check if <div> with class "menu-bar" has a link to "projects.html"', async ({ page }) => {
+  await page.goto(BenWebsite);
+  await page.waitForLoadState('load');
+  const expectedLink = 'projects.html';
+  const linkInMenuBar = await page.$eval('div.menu-bar a', (anchor) => anchor.getAttribute('href'));
+  expect(linkInMenuBar).toBe(expectedLink);
 });
