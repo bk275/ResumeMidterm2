@@ -62,9 +62,11 @@ test('Check for keywords in HTML file', async ({ page }) => {
   await page.goto(BenWebsite);
   await page.waitForLoadState('load');
   const keywordsToCheck = ['student', 'resume', 'project'];
-  const pageContent = await page.textContent('html');
+  const metaTagsContent = await page.$$eval('head meta[name]', (metaTags) => {
+    return metaTags.map((tag) => tag.getAttribute('content').toLowerCase());
+  });
   for (const keyword of keywordsToCheck) {
-    expect(pageContent.toLowerCase()).toContain(keyword.toLowerCase());
+    expect(metaTagsContent).toContain(keyword.toLowerCase());
   }
 });
 test('Check for <div> with class "menu-bar"', async ({ page }) => {
@@ -72,4 +74,11 @@ test('Check for <div> with class "menu-bar"', async ({ page }) => {
   await page.waitForLoadState('load');
   const menuBarElement = await page.$('div.menu-bar');
   expect(menuBarElement).toBeTruthy();
+});
+test('Check if meta tag with name "author" has a specific value', async ({ page }) => {
+  await page.goto('file:///path/to/your/file.html');
+  await page.waitForLoadState('load');
+  const expectedAuthor = 'Ben Kustanovich';
+  const authorContent = await page.$eval('head meta[name="author"]', (metaTag) => metaTag.getAttribute('content'));
+  expect(authorContent).toBe(expectedAuthor);
 });
