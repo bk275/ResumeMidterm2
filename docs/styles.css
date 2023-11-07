@@ -120,6 +120,12 @@ i {
 } 
 footer {
     font-family: 'Helvetica', sans-serif;
+    background-color: white;
+    border: 2px dashed;
+    border-image: linear-gradient(45deg, var(--purple-color), var (--orange-color)) 1;
+    padding: 10px;
+    text-align: center;
+    color: var(--purple-color);
 }
 .footer p {
     font-size: 12px;
