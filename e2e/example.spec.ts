@@ -37,3 +37,8 @@ test('Check if HTML is connected to styles.css', async ({ page }) => {
   });
   expect(isStylesheetLinked).toBeTruthy();
 });
+test('Check if <body> tag is present', async ({ page }) => {
+  await page.goto(BenWebsite);
+  const bodyTag = await page.$('body');
+  expect(bodyTag).toBeTruthy();
+});
