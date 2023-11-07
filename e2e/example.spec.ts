@@ -101,11 +101,12 @@ test('Check if <i> with class "devicon-html5-plain colored" has an <img>', async
   const htmlIconElement = await page.$('i.devicon-html5-plain.colored img');
   expect(htmlIconElement).toBeTruthy();
 });
-/* test('Check if <footer> with class "fa fa-github" has an <img> with src', async ({ page }) => {
+test('Check if <footer> with class "fa fa-github" has an <img> with src', async ({ page }) => {
   await page.goto(BenWebsite);
+  /* load page 1st */
   await page.waitForLoadState('load');
   const githubFooterElement = await page.$('footer.fa.fa-github img');
   expect(githubFooterElement).toBeTruthy();
   const imgSrc = await githubFooterElement.getAttribute('src');
   expect(imgSrc).toBeTruthy();
-}); */
+});
