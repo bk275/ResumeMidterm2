@@ -157,10 +157,10 @@ footer {
     text-align: center;
     color: var(--purple-color);
 }
-/* footer > img {
+footer > img {
     width: 32px;
     height: 32px;
-} */
+}
 .footer p {
     font-size: 12px;
 }
