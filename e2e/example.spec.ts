@@ -67,3 +67,9 @@ test('Check for keywords in HTML file', async ({ page }) => {
     expect(pageContent.toLowerCase()).toContain(keyword.toLowerCase());
   }
 });
+test('Check for <div> with class "menu-bar"', async ({ page }) => {
+  await page.goto(BenWebsite);
+  await page.waitForLoadState('load');
+  const menuBarElement = await page.$('div.menu-bar');
+  expect(menuBarElement).toBeTruthy();
+});
