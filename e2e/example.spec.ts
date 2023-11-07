@@ -58,3 +58,12 @@ test('Check for exactly one <footer> tag', async ({ page }) => {
   const footerTag = footerElements[0];
   expect(footerTag).toBeTruthy();
 });
+test('Check for keywords in HTML file', async ({ page }) => {
+  await page.goto(BenWebsite);
+  await page.waitForLoadState('load');
+  const keywordsToCheck = ['student', 'resume', 'project'];
+  const pageContent = await page.textContent('html');
+  for (const keyword of keywordsToCheck) {
+    expect(pageContent.toLowerCase()).toContain(keyword.toLowerCase());
+  }
+});
