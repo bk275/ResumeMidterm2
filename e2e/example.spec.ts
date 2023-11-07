@@ -89,3 +89,15 @@ test('Check if <div> with class "menu-bar" has a link to "projects.html"', async
   const linkInMenuBar = await page.$eval('div.menu-bar a', (anchor) => anchor.getAttribute('href'));
   expect(linkInMenuBar).toBe(expectedLink);
 });
+test('Check if <div> with class "profile-pic" has an image', async ({ page }) => {
+  await page.goto(BenWebsite);
+  await page.waitForLoadState('load');
+  const profilePicElement = await page.$('div.profile-pic img');
+  expect(profilePicElement).toBeTruthy();
+});
+/* test('Check if <i> with class "devicon-html5-plain colored" has an <img>', async ({ page }) => {
+  await page.goto(BenWebsite); 
+  await page.waitForLoadState('load');
+  const htmlIconElement = await page.$('i.devicon-html5-plain.colored img');
+  expect(htmlIconElement).toBeTruthy();
+}); */
