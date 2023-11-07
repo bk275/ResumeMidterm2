@@ -124,3 +124,14 @@ footer {
 .footer p {
     font-size: 12px;
 }
+@media screen and (max-width: 768px) {
+    .grid-container div{
+        width: 100%;
+    }
+    .flip-card-front{
+        font-size: 10px;
+    }
+    .flip-card-back{
+        font-size: 10px;
+    }
+}
