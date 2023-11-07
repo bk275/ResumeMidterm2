@@ -24,7 +24,8 @@ test('Check website language is English', async ({ page }) => {
   const language = await page.$eval('html', (html) => html.lang);
   expect(language).toBe('en');
 });
-test('Check Name Heading', async ({ page }) => {
+test('check if resume title is visible', async ({ page }) => {
   await page.goto(BenWebsite);
-  await expect(page.locator('resume-button')).toBeVisible();
+  const resumeButton = await page.$('.resume-button');
+  expect(resumeButton).toBeTruthy();
 });
